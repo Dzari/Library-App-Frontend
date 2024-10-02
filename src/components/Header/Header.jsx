@@ -2,7 +2,8 @@ import React from 'react';
 
 export default function Header() {
   return (
-    <div className="header flex justify-between h-12 py-1.5 text-[#B3B3B3]">
+    <div className="header col-span-5">
+    <div className="header__container flex justify-between h-12 py-1.5 text-[#B3B3B3]">
       <button className="header__home-button">Home</button>
       <input
         type="text"
@@ -15,6 +16,7 @@ export default function Header() {
           Login
         </button>
       </div>
+    </div>
     </div>
   );
 }
