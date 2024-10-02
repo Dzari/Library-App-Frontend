@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Header() {
   return (
-    <div className="header col-span-5 h-[6vh]">
+    <div className="header col-span-5 h-[5vh]">
       <div className='top-0 w-full'>
         <div className="header__container flex justify-between h-12 py-1.5 text-[#B3B3B3]">
           <button className="header__home-button">Home</button>

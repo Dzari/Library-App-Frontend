@@ -10,9 +10,9 @@ export default function ItemCard({ card, shelf }) {
             alt={card.author}
             className="h-[220px] w-[220px] rounded-full object-cover object-center"
           />
-          <div className="card__info text-white mx-auto">
+          <div className="card__info text-white ml-5 my-3">
             <h2 className="card__title">{card.author}</h2>
-            <h3 className="card__subtitle">Author</h3>
+            <h3 className="card__subtitle text-xs font-normal">Author</h3>
           </div>
         </div>
       );
@@ -22,11 +22,13 @@ export default function ItemCard({ card, shelf }) {
           <img
             src={card.img}
             alt=""
-            className="h-[220px] w-[220px] object-cover object-center"
+            className="h-[220px] w-[220px] object-contain object-center"
           />
-          <div className="card__info text-white mx-auto">
+          <div className="card__info text-white m-auto my-3">
             <h2 className="card__title">{card.series}</h2>
-            <h3 className="card__subtitle">{card.author}</h3>
+            <h3 className="card__subtitle text-xs font-normal">
+              {card.author}
+            </h3>
           </div>
         </div>
       );
@@ -36,11 +38,13 @@ export default function ItemCard({ card, shelf }) {
           <img
             src={card.img}
             alt=""
-            className="h-[220px] w-[220px] object-cover object-center"
+            className="h-[220px] w-[220px] object-contain object-center"
           />
-          <div className="card__info text-white mx-auto">
-            <h2 className="card__title">{card.series}</h2>
-            <h3 className="card__subtitle">{card.author}</h3>
+          <div className="card__info text-white m-auto my-3">
+            <h2 className="card__title">{card.title}</h2>
+            <h3 className="card__subtitle text-xs font-normal">
+              {card.author}
+            </h3>
           </div>
         </div>
       );

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Sidebar() {
   return (
-    <section className="sidebar col-start-1 col-span-1 bg-[#121212] rounded-xl text-white h-[90vh]">
+    <section className="sidebar col-start-1 col-span-1 bg-[#121212] rounded-xl text-white h-[93vh]">
       <nav>
         <div>
           <div className='flex justify-between'>
