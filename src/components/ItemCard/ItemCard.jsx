@@ -5,7 +5,11 @@ export default function ItemCard({ card, shelf }) {
     if (shelf === 'Popular Authors') {
       return (
         <div className="card flex flex-col">
-          <img src={card.img} alt="" className="max-h-55 rounded-full" />
+          <img
+            src={card.img}
+            alt={card.author}
+            className="h-36 w-36 rounded-full object-cover object-center"
+          />
           <div className="card__info text-white mx-auto">
             <h2 className="card__title">{card.author}</h2>
             <h3 className="card__subtitle">Author</h3>
@@ -15,7 +19,11 @@ export default function ItemCard({ card, shelf }) {
     } else if (shelf === 'Popular Series') {
       return (
         <div className="card flex flex-col">
-          <img src={card.img} alt="" className="max-h-55" />
+          <img
+            src={card.img}
+            alt=""
+            className="h-36 w-36 rounded-full object-cover object-center"
+          />
           <div className="card__info text-white mx-auto">
             <h2 className="card__title">{card.series}</h2>
             <h3 className="card__subtitle">{card.author}</h3>
@@ -25,7 +33,11 @@ export default function ItemCard({ card, shelf }) {
     } else if (shelf === 'New York Best Sellers') {
       return (
         <div className="card flex flex-col">
-          <img src={card.img} alt="" className="max-h-55" />
+          <img
+            src={card.img}
+            alt=""
+            className="h-36 w-36 rounded-full object-cover object-center"
+          />
           <div className="card__info text-white mx-auto">
             <h2 className="card__title">{card.series}</h2>
             <h3 className="card__subtitle">{card.author}</h3>
