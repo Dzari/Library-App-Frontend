@@ -22,7 +22,7 @@ export default function ItemCard({ card, shelf }) {
           <img
             src={card.img}
             alt=""
-            className="h-36 w-36 rounded-full object-cover object-center"
+            className="h-36 w-36 object-cover object-center"
           />
           <div className="card__info text-white mx-auto">
             <h2 className="card__title">{card.series}</h2>
@@ -36,7 +36,7 @@ export default function ItemCard({ card, shelf }) {
           <img
             src={card.img}
             alt=""
-            className="h-36 w-36 rounded-full object-cover object-center"
+            className="h-36 w-36 object-cover object-center"
           />
           <div className="card__info text-white mx-auto">
             <h2 className="card__title">{card.series}</h2>
