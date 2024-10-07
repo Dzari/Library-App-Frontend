@@ -1,6 +1,6 @@
 import React from 'react';
-import { shelves } from '../../const';
-import Shelf from '../Shelf/Shelf';
+import { shelves } from '../const';
+import Shelf from './Shelf';
 
 export default function Shelves() {
   return (

@@ -1,6 +1,6 @@
-import Header from '../Header/Header.jsx';
-import Main from '../Main/Main.jsx';
-import Sidebar from '../Sidebar/Sidebar.jsx';
+import Header from './Header.jsx';
+import Main from './Main.jsx';
+import Sidebar from './Sidebar.jsx';
 
 export default function App() {
   return (
