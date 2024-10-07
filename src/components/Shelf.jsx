@@ -10,49 +10,37 @@ export default function Shelf({ data }) {
         {data.cards.map((card) => {
           counter++;
           if (window.innerWidth > 1780 && counter <= 6) {
-            return (
-              <ItemCard card={card} shelf={data.shelf} />
-            );
+            return <ItemCard card={card} rounded={data.rounded} />;
           } else if (
             window.innerWidth < 1780 &&
             window.innerWidth >= 1610 &&
             counter <= 5
           ) {
-            return (
-              <ItemCard card={card} shelf={data.shelf} />
-            );
+            return <ItemCard card={card} rounded={data.rounded} />;
           } else if (
             window.innerWidth < 1610 &&
             window.innerWidth >= 1270 &&
             counter <= 4
           ) {
-            return (
-              <ItemCard card={card} shelf={data.shelf} />
-            );
+            return <ItemCard card={card} rounded={data.rounded} />;
           } else if (
             window.innerWidth < 1270 &&
             window.innerWidth >= 740 &&
             counter <= 3
           ) {
-            return (
-              <ItemCard card={card} shelf={data.shelf} />
-            );
+            return <ItemCard card={card} rounded={data.rounded} />;
           } else if (
             window.innerWidth < 740 &&
             window.innerWidth >= 500 &&
             counter <= 2
           ) {
-            return (
-              <ItemCard card={card} shelf={data.shelf} />
-            );
+            return <ItemCard card={card} rounded={data.rounded} />;
           } else if (
             window.innerWidth < 500 &&
             window.innerWidth >= 320 &&
             counter <= 1
           ) {
-            return (
-              <ItemCard card={card} shelf={data.shelf} />
-            );
+            return <ItemCard card={card} rounded={data.rounded} />;
           }
         })}
       </div>
