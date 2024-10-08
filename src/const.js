@@ -33,6 +33,41 @@ const shelves = [
         subtitle: 'Author',
         img: 'https://shereads.com/wp-content/uploads/2018/03/Kristin-Hannah-1.jpg',
       },
+      {
+        title: 'Kristin Hannah',
+        subtitle: 'Author',
+        img: 'https://shereads.com/wp-content/uploads/2018/03/Kristin-Hannah-1.jpg',
+      },
+      {
+        title: 'Kristin Hannah',
+        subtitle: 'Author',
+        img: 'https://shereads.com/wp-content/uploads/2018/03/Kristin-Hannah-1.jpg',
+      },
+      {
+        title: 'Kristin Hannah',
+        subtitle: 'Author',
+        img: 'https://shereads.com/wp-content/uploads/2018/03/Kristin-Hannah-1.jpg',
+      },
+      {
+        title: 'Kristin Hannah',
+        subtitle: 'Author',
+        img: 'https://shereads.com/wp-content/uploads/2018/03/Kristin-Hannah-1.jpg',
+      },
+      {
+        title: 'Kristin Hannah',
+        subtitle: 'Author',
+        img: 'https://shereads.com/wp-content/uploads/2018/03/Kristin-Hannah-1.jpg',
+      },
+      {
+        title: 'Kristin Hannah',
+        subtitle: 'Author',
+        img: 'https://shereads.com/wp-content/uploads/2018/03/Kristin-Hannah-1.jpg',
+      },
+      {
+        title: 'Kristin Hannah',
+        subtitle: 'Author',
+        img: 'https://shereads.com/wp-content/uploads/2018/03/Kristin-Hannah-1.jpg',
+      },
     ],
   },
   {
@@ -69,6 +104,36 @@ const shelves = [
         subtitle: 'Jennifer Lynn Barnes',
         img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1587396413i/52439531.jpg',
       },
+      {
+        title: 'The Inheritance Games',
+        subtitle: 'Jennifer Lynn Barnes',
+        img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1587396413i/52439531.jpg',
+      },
+      {
+        title: 'The Inheritance Games',
+        subtitle: 'Jennifer Lynn Barnes',
+        img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1587396413i/52439531.jpg',
+      },
+      {
+        title: 'The Inheritance Games',
+        subtitle: 'Jennifer Lynn Barnes',
+        img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1587396413i/52439531.jpg',
+      },
+      {
+        title: 'The Inheritance Games',
+        subtitle: 'Jennifer Lynn Barnes',
+        img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1587396413i/52439531.jpg',
+      },
+      {
+        title: 'The Inheritance Games',
+        subtitle: 'Jennifer Lynn Barnes',
+        img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1587396413i/52439531.jpg',
+      },
+      {
+        title: 'The Inheritance Games',
+        subtitle: 'Jennifer Lynn Barnes',
+        img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1587396413i/52439531.jpg',
+      },
     ],
   },
   {
@@ -99,6 +164,41 @@ const shelves = [
         title: 'The Women',
         subtitle: 'Kristin Hannah',
         img: 'https://storage.googleapis.com/du-prd/books/images/9781250178633.jpg',
+      },
+      {
+        title: 'Something lost, something gained',
+        subtitle: 'Hillary Rodham Clinton',
+        img: 'https://storage.googleapis.com/du-prd/books/images/9781668017234.jpg',
+      },
+      {
+        title: 'Something lost, something gained',
+        subtitle: 'Hillary Rodham Clinton',
+        img: 'https://storage.googleapis.com/du-prd/books/images/9781668017234.jpg',
+      },
+      {
+        title: 'Something lost, something gained',
+        subtitle: 'Hillary Rodham Clinton',
+        img: 'https://storage.googleapis.com/du-prd/books/images/9781668017234.jpg',
+      },
+      {
+        title: 'Something lost, something gained',
+        subtitle: 'Hillary Rodham Clinton',
+        img: 'https://storage.googleapis.com/du-prd/books/images/9781668017234.jpg',
+      },
+      {
+        title: 'Something lost, something gained',
+        subtitle: 'Hillary Rodham Clinton',
+        img: 'https://storage.googleapis.com/du-prd/books/images/9781668017234.jpg',
+      },
+      {
+        title: 'Something lost, something gained',
+        subtitle: 'Hillary Rodham Clinton',
+        img: 'https://storage.googleapis.com/du-prd/books/images/9781668017234.jpg',
+      },
+      {
+        title: 'Something lost, something gained',
+        subtitle: 'Hillary Rodham Clinton',
+        img: 'https://storage.googleapis.com/du-prd/books/images/9781668017234.jpg',
       },
       {
         title: 'Something lost, something gained',
