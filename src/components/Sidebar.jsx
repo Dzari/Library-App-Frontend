@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ButtonCard from './ButtonCard';
 
+import { screenWidthContext } from '../contexts/contexts';
+
 export default function Sidebar() {
-  if (window.innerWidth > 980)
+  const { screenWidth } = useContext(screenWidthContext);
+  if (screenWidth > 980)
     return (
       <section className="sidebar col-start-1 col-span-1 bg-[#121212] rounded-xl text-white h-[93vh]">
         <nav>
