@@ -1,9 +1,7 @@
 import React from 'react';
 
 export default function ItemCard({ card, rounded }) {
-  const roundedImageClasses =
-    'h-[220px] w-[220px] rounded-full object-cover object-center';
-  const squareImageClasses = 'object-contain object-center';
+  const roundedImageClasses = 'h-[220px] w-[220px] rounded-full object-cover';
 
   return (
     <div className="card flex flex-col max-w-[220px]">
@@ -15,7 +13,9 @@ export default function ItemCard({ card, rounded }) {
         <img
           src={card.img}
           alt={card.title}
-          className={rounded ? roundedImageClasses : squareImageClasses}
+          className={`card__image ${
+            rounded ? roundedImageClasses : 'object-contain'
+          } object-center`}
         />
       </div>
       <div className="card__info text-white m-1 my-3">
