@@ -6,6 +6,9 @@ module.exports = {
       maxWidth: {
         '2k': '160rem',
       },
+      backgroundImage: {
+        'close-icon': "url('./assets/close-icon.svg')"
+      }
     },
   },
   plugins: [],
