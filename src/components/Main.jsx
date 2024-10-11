@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 import HomeView from './Views/HomeView';
+import ShowAllView from './Views/ShowAllView';
 
 import { screenWidthContext } from '../contexts/contexts';
-
 import { shelves } from '../const';
-import ShowAllView from './Views/ShowAllView';
 
 export default function Main() {
   const { screenWidth } = useContext(screenWidthContext);
@@ -14,8 +15,21 @@ export default function Main() {
     <div
       className={`main ${position} bg-gradient-to-b from-[#535353] to-[#121212] to-30% rounded-xl h-[93vh]`}
     >
-      {/* <HomeView /> */}
-      <ShowAllView data={shelves[1]}/>
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route
+          path="/PopularAuthors"
+          element={<ShowAllView data={shelves[0]} />}
+        />
+        <Route
+          path="/PopularSeries"
+          element={<ShowAllView data={shelves[1]} />}
+        />
+        <Route
+          path="/BestSellers"
+          element={<ShowAllView data={shelves[2]} />}
+        />
+      </Routes>
     </div>
   );
 }

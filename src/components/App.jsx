@@ -10,7 +10,7 @@ import { screenWidthContext } from '../contexts/contexts.js';
 
 export default function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [activeModal, setActiveModal] = useState('login');
+  const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleCloseModal = () => {
