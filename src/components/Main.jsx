@@ -18,15 +18,15 @@ export default function Main() {
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route
-          path="/PopularAuthors"
+          path="/Popular Authors"
           element={<ShowAllView data={shelves[0]} />}
         />
         <Route
-          path="/PopularSeries"
+          path="/Popular Series"
           element={<ShowAllView data={shelves[1]} />}
         />
         <Route
-          path="/BestSellers"
+          path="/New York Best Sellers"
           element={<ShowAllView data={shelves[2]} />}
         />
       </Routes>

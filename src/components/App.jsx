@@ -43,8 +43,11 @@ export default function App() {
     <div className="app h-[100vh] bg-black">
       <screenWidthContext.Provider value={{ screenWidth, setScreenWidth }}>
         <div className="app__wrapper grid grid-cols-5 grid-row-auto gap-2.5 px-2 max-w-2k font-bold mx-auto overflow-hidden">
-          <Header />
-          <Sidebar />
+          <Header
+            handleLoginClick={handleLoginClick}
+            handleSignupClick={handleSignupClick}
+          />
+          <Sidebar handleLoggedOutClick={handleLoginClick} />
           <Main />
         </div>
         {activeModal === 'login' && (

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import ItemCard from './ItemCard';
 
@@ -12,7 +13,9 @@ export default function Shelf({ data }) {
     <section className="flex flex-col mb-10 p-4">
       <div className="shelf__container flex justify-between text-white mb-4">
         <div className="shelf__title">{data.shelf}</div>
-        <button className="shelf__show-all-button">Show All</button>
+        <Link to={data.shelf}>
+          <button className="shelf__show-all-button">Show All</button>
+        </Link>
       </div>
       <div className="flex gap-10">
         {data.cards.map((card) => {
