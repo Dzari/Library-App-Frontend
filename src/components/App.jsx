@@ -5,6 +5,7 @@ import Main from './Main.jsx';
 import Sidebar from './Sidebar.jsx';
 import LoginModal from './LoginModal.jsx';
 import SignupModal from './signupModal.jsx';
+import { getBook, getBestSellers } from '../utils/api.jsx';
 
 import { screenWidthContext } from '../contexts/contexts.js';
 
@@ -12,6 +13,7 @@ export default function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [shelves, setShelves] = useState([]);
 
   const handleCloseModal = () => {
     setActiveModal('');
@@ -39,6 +41,30 @@ export default function App() {
     });
   }, []);
 
+  //getBook();
+  //getBestSellers();
+
+  useEffect(() => {
+    getBestSellers().then((data) => {
+      const shelvesData = data.results.lists.map((shelf) => {
+        let modifiedShelf = {
+          shelf: `${shelf.display_name}`,
+          rounded: false,
+          cards: shelf.books.map((book) => {
+            const bookData = {
+              title: book.title,
+              subtitle: book.author,
+              img: book.book_image,
+            };
+            return bookData;
+          }),
+        };
+        return modifiedShelf;
+      });
+      setShelves(shelvesData);
+    });
+  }, []);
+
   return (
     <div className="app h-[100vh] bg-black">
       <screenWidthContext.Provider value={{ screenWidth, setScreenWidth }}>
@@ -48,7 +74,7 @@ export default function App() {
             handleSignupClick={handleSignupClick}
           />
           <Sidebar handleLoggedOutClick={handleLoginClick} />
-          <Main />
+          <Main shelvesData={shelves} />
         </div>
         {activeModal === 'login' && (
           <LoginModal

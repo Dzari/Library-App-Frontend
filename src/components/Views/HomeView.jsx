@@ -1,8 +1,7 @@
 import React from 'react';
-import { shelves } from '../../const';
 import Shelf from '../Shelf';
 
-export default function HomeView() {
+export default function HomeView({shelves}) {
   return (
     <section className="overflow-auto h-full">
       {shelves.map((data) => {
