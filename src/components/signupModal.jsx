@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ModalWithForm from '../components/ModalWithForm';
+import ModalWithForm from './ModalWithForm';
 
 const SignupModal = ({
   handleCloseModal,
