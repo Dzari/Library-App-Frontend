@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/library-app-frontend/static/css/main.693b4985.css",
-    "main.js": "/library-app-frontend/static/js/main.257d70fb.js",
-    "static/media/CabinetGrotesk-Medium.ttf": "/library-app-frontend/static/media/CabinetGrotesk-Medium.06e4535179580983658a.ttf",
-    "static/media/CabinetGrotesk-Bold.ttf": "/library-app-frontend/static/media/CabinetGrotesk-Bold.049721aa3e601711db60.ttf",
-    "static/media/CabinetGrotesk-Bold.woff": "/library-app-frontend/static/media/CabinetGrotesk-Bold.0fb1cbec860aa3537c32.woff",
-    "static/media/CabinetGrotesk-Medium.woff": "/library-app-frontend/static/media/CabinetGrotesk-Medium.1928499875b5b3682ea5.woff",
-    "static/media/CabinetGrotesk-Bold.woff2": "/library-app-frontend/static/media/CabinetGrotesk-Bold.c9c3bc30c44ade9d3b9b.woff2",
-    "static/media/CabinetGrotesk-Medium.woff2": "/library-app-frontend/static/media/CabinetGrotesk-Medium.467bcdaa2530ea758403.woff2",
-    "static/media/edit-icon.svg": "/library-app-frontend/static/media/edit-icon.376dfce7c69d455c18ca.svg",
-    "static/media/close-icon.svg": "/library-app-frontend/static/media/close-icon.2a03e2cbc6a0f30743ba.svg",
-    "static/media/hover-edit-icon.svg": "/library-app-frontend/static/media/hover-edit-icon.bfa5750b0ac1710881dc.svg",
-    "index.html": "/library-app-frontend/index.html",
-    "static/media/home-icon.svg": "/library-app-frontend/static/media/home-icon.5e2887d5786c47293495.svg",
-    "static/media/hover-home-icon.svg": "/library-app-frontend/static/media/hover-home-icon.c5f7bdd562b0210f02ac.svg",
-    "main.693b4985.css.map": "/library-app-frontend/static/css/main.693b4985.css.map",
-    "main.257d70fb.js.map": "/library-app-frontend/static/js/main.257d70fb.js.map"
+    "main.css": "/static/css/main.b5fa9cc1.css",
+    "main.js": "/static/js/main.257d70fb.js",
+    "static/media/CabinetGrotesk-Medium.ttf": "/static/media/CabinetGrotesk-Medium.06e4535179580983658a.ttf",
+    "static/media/CabinetGrotesk-Bold.ttf": "/static/media/CabinetGrotesk-Bold.049721aa3e601711db60.ttf",
+    "static/media/CabinetGrotesk-Bold.woff": "/static/media/CabinetGrotesk-Bold.0fb1cbec860aa3537c32.woff",
+    "static/media/CabinetGrotesk-Medium.woff": "/static/media/CabinetGrotesk-Medium.1928499875b5b3682ea5.woff",
+    "static/media/CabinetGrotesk-Bold.woff2": "/static/media/CabinetGrotesk-Bold.c9c3bc30c44ade9d3b9b.woff2",
+    "static/media/CabinetGrotesk-Medium.woff2": "/static/media/CabinetGrotesk-Medium.467bcdaa2530ea758403.woff2",
+    "static/media/edit-icon.svg": "/static/media/edit-icon.376dfce7c69d455c18ca.svg",
+    "static/media/close-icon.svg": "/static/media/close-icon.2a03e2cbc6a0f30743ba.svg",
+    "static/media/hover-edit-icon.svg": "/static/media/hover-edit-icon.bfa5750b0ac1710881dc.svg",
+    "static/media/home-icon.svg": "/static/media/home-icon.5e2887d5786c47293495.svg",
+    "static/media/hover-home-icon.svg": "/static/media/hover-home-icon.c5f7bdd562b0210f02ac.svg",
+    "index.html": "/index.html",
+    "main.b5fa9cc1.css.map": "/static/css/main.b5fa9cc1.css.map",
+    "main.257d70fb.js.map": "/static/js/main.257d70fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.693b4985.css",
+    "static/css/main.b5fa9cc1.css",
     "static/js/main.257d70fb.js"
   ]
 }
