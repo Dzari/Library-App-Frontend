@@ -3,13 +3,16 @@ import { Route, Routes } from 'react-router-dom';
 
 import HomeView from './Views/HomeView';
 import ShowAllView from './Views/ShowAllView';
+import SearchResults from './Views/SearchResults';
 
-import { screenWidthContext } from '../contexts/contexts';
+import { screenWidthContext, searchResultsContext } from '../contexts/contexts';
 
 export default function Main({ shelvesData, handleCardClick }) {
   const { screenWidth } = useContext(screenWidthContext);
+  const { searchResults } = useContext(searchResultsContext);
   const position =
     screenWidth > 980 ? 'col-start-2 col-span-4' : 'col-start-1 col-span-5';
+
   return (
     <div
       className={`main ${position} bg-gradient-to-b from-[#535353] to-[#121212] to-30% rounded-xl h-[93vh]`}
@@ -29,6 +32,10 @@ export default function Main({ shelvesData, handleCardClick }) {
             />
           );
         })}
+        <Route
+          path="/searchResults"
+          element={<SearchResults books={searchResults} handleCardClick={handleCardClick}/>}
+        />
       </Routes>
     </div>
   );

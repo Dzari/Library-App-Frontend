@@ -23,14 +23,17 @@ export default function ItemModal({ isOpen, book, handleCloseModal }) {
             {book.des === '' ? (
               <div>{book.title}</div>
             ) : (
-              <div className="py-6 max-w-[300px]">{book.des}</div>
+              <div className="py-4 max-w-[300px]">{book.des}</div>
             )}
-            <h2>
-              Buy on{' '}
-              <a className="text-blue-500 underline" href={book.link} target="_blank" rel="noopener noreferrer">
-                Amazon
-              </a>
-            </h2>
+
+            <a
+              className={`text-blue-500 underline ${book.link ? '' : 'invisible'}`}
+              href={book.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {`Buy ${book.title} now`}
+            </a>
           </div>
         </div>
       </div>

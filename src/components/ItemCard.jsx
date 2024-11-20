@@ -12,7 +12,7 @@ export default function ItemCard({ card, rounded, onClick }) {
       <div
         className={`card_image-container shadow-[0_10px_30px_rgba(0,0,0,0.8)] max-h-[${
           rounded ? '220px' : '330px'
-        }] max-w-[220px] flex justify-center`}
+        }] max-w-[220px] min-w-[220px] min-h-[365.2px] w-full h-full block`}
       >
         {card.img === null ? (
           card.title
@@ -20,9 +20,7 @@ export default function ItemCard({ card, rounded, onClick }) {
           <img
             src={card.img}
             alt={card.title}
-            className={`card__image ${
-              rounded ? roundedImageClasses : 'object-cover'
-            } object-center`}
+            className='h-full w-full'
             onClick={handleCardClick}
           />
         )}

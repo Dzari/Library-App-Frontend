@@ -30,6 +30,7 @@ export default function Sidebar({ handleLoggedOutClick }) {
                 title={'Find your next series'}
                 subtitle={`We'll keep you updated on new releases`}
                 buttonText={'Browse Series'}
+                onClick={handleLoggedOutClick}
               />
             </div>
           </div>
