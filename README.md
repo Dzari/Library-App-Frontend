@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Library App (Frontend)
 
-## Available Scripts
+A simple and efficient library app that allows users to search for books using the Google Books API. This app displays book details such as the title, authors, and image thumbnails. Users can explore books and view more detailed previews through direct links to Google Books.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Frontend library to build the user interface.
+- **React Router**: For handling routing and navigation within the app.
+- **JavaScript (ES6)**: Core language features for functionality.
+- **CSS/Tailwind CSS**: Styling framework to quickly design responsive, clean, and modern interfaces.
+- **Google Books API**: To fetch book data such as title, authors, images, and more.
+- **Axios/Fetch**: For making API requests to the Google Books API.
+  
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Search for books using keywords.
+- View book details like title, authors, and image thumbnails.
+- Navigate to a detailed view of each book via a preview link.
+- Responsive layout that adapts to different screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## How to Start the App Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Before running the app, ensure you have the following installed:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Node.js** (version 14 or higher)
+- **npm** (or yarn)
 
-### `npm run eject`
+### Steps
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the repository**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   git clone https://github.com/Dzari/library-app-frontend.git
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Navigate to the project directory**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   cd library-app-frontend
+   ```
 
-## Learn More
+3. **Install dependencies**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   Using npm:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm install
+   ```
 
-### Code Splitting
+   Or using yarn:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   yarn install
+   ```
 
-### Analyzing the Bundle Size
+4. **Start the development server**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   Using npm:
 
-### Making a Progressive Web App
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   Or using yarn:
 
-### Advanced Configuration
+   ```bash
+   yarn start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   This will start the app on `http://localhost:3000` (or another available port).
 
-### Deployment
+5. **Open the app in your browser**:  
+   Navigate to `http://localhost:3000` to view the app in action.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## How to Deploy the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 1. **Build the App for Production**
+
+To deploy your app, first build it for production:
+
+Using npm:
+
+```bash
+npm run build
+```
+
+Or using yarn:
+
+```bash
+yarn build
+```
+
+This creates a `build` directory containing optimized production files.
+
+### 2. **Choose a Hosting Provider**
+
+You can host your app on several platforms. Some common options include:
+
+- **Vercel**: Fast and easy deployment, especially for React apps.
+- **Netlify**: Simple to deploy and offers continuous integration.
+- **GitHub Pages**: A free and straightforward way to host static sites directly from your GitHub repository.
+
+#### Deploying on Vercel or Netlify
+
+1. Create a new project on [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/).
+2. Link the repository to the hosting provider.
+3. Push your changes to GitHub, and the deployment will automatically start.
+
+---
+
+## Link to the Deployed App
+
+Once you've deployed the app, add the link to the deployed app below:
+
+**Deployed App URL**: https://dzari.github.io/library-app-frontend (then click the home button)
+
+---
+
+## How the App Works
+
+### Search for Books
+- Users can enter a search term in the search bar.
+- The app will query the [Google Books API](https://developers.google.com/books) and display the results, including the book title, author(s), and an image thumbnail.
+- If the user clicks on a book, they can view a detailed preview by clicking on the "View Preview" link, which takes them to the book’s page on Google Books.
+
+---
+
+## Future Improvements
+
+- Implement pagination for the search results to load more books.
+- Add a favorites feature to allow users to save their preferred books.
+- Improve error handling and loading states for a smoother user experience.
+- Add user authentication for a more personalized experience.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. (To be added later)
+
+---
+
+### Contact
+
+For any issues or contributions, feel free to open an issue or pull request in the [GitHub repository](https://github.com/Dzari/library-app-frontend).
+
+---
+
+Let me know if you need any further updates or clarifications! 😊
