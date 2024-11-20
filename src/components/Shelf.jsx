@@ -60,7 +60,7 @@ export default function Shelf({ data, handleCardClick }) {
                 onClick={handleCardClick}
               />
             );
-          } else if (counter <= 1) {
+          } else {
             return (
               <ItemCard
                 card={card}
