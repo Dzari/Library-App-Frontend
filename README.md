@@ -124,7 +124,7 @@ You can host your app on several platforms. Some common options include:
 
 Once you've deployed the app, add the link to the deployed app below:
 
-**Deployed App URL**: https://dzari.github.io/library-app-frontend
+**Deployed App URL**: https://dzari.github.io/library-app-frontend (then click the home button)
 
 ---
 
