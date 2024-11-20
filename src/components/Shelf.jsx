@@ -5,7 +5,7 @@ import ItemCard from './ItemCard';
 
 import { screenWidthContext } from '../contexts/contexts';
 
-export default function Shelf({ data }) {
+export default function Shelf({ data, handleCardClick }) {
   let counter = 0;
 
   const { screenWidth } = useContext(screenWidthContext);
@@ -21,17 +21,53 @@ export default function Shelf({ data }) {
         {data.cards.map((card) => {
           counter++;
           if (screenWidth >= 1640 && counter <= 6) {
-            return <ItemCard card={card} rounded={data.rounded} />;
+            return (
+              <ItemCard
+                card={card}
+                rounded={data.rounded}
+                onClick={handleCardClick}
+              />
+            );
           } else if (screenWidth >= 1380 && counter <= 5) {
-            return <ItemCard card={card} rounded={data.rounded} />;
+            return (
+              <ItemCard
+                card={card}
+                rounded={data.rounded}
+                onClick={handleCardClick}
+              />
+            );
           } else if (screenWidth >= 1100 && counter <= 4) {
-            return <ItemCard card={card} rounded={data.rounded} />;
+            return (
+              <ItemCard
+                card={card}
+                rounded={data.rounded}
+                onClick={handleCardClick}
+              />
+            );
           } else if (screenWidth >= 675 && counter <= 3) {
-            return <ItemCard card={card} rounded={data.rounded} />;
+            return (
+              <ItemCard
+                card={card}
+                rounded={data.rounded}
+                onClick={handleCardClick}
+              />
+            );
           } else if (screenWidth >= 455 && counter <= 2) {
-            return <ItemCard card={card} rounded={data.rounded} />;
+            return (
+              <ItemCard
+                card={card}
+                rounded={data.rounded}
+                onClick={handleCardClick}
+              />
+            );
           } else if (counter <= 1) {
-            return <ItemCard card={card} rounded={data.rounded} />;
+            return (
+              <ItemCard
+                card={card}
+                rounded={data.rounded}
+                onClick={handleCardClick}
+              />
+            );
           }
         })}
       </div>

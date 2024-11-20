@@ -11,7 +11,7 @@ export default function ModalWithForm({
         isOpen && '!visible'
       }`}
     >
-      <div className="modal__container relative p-6 rounded-[20px] bg-emerald-500 m-auto text-black w-[436px] box-border">
+      <div className="modal__container relative pt-8 pb-4 px-6 rounded-lg bg-gray-900 text-white shadow-[0_10px_30px_rgba(0,0,0,0.8)] w-[480px] box-border">
         <h2 className="modal__title m-0 mb-6">{title}</h2>
         <button
           onClick={onClose}

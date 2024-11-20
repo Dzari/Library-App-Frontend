@@ -5,6 +5,7 @@ import Main from './Main.jsx';
 import Sidebar from './Sidebar.jsx';
 import LoginModal from './LoginModal.jsx';
 import SignupModal from './signupModal.jsx';
+import PreviewModal from './PreviewModal.jsx';
 import { getBook, getBestSellers } from '../utils/api.jsx';
 
 import { screenWidthContext } from '../contexts/contexts.js';
@@ -13,6 +14,7 @@ export default function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedBook, setSelectedBook] = useState({});
   const [shelves, setShelves] = useState([]);
 
   const handleCloseModal = () => {
@@ -35,6 +37,20 @@ export default function App() {
     setActiveModal('login');
   };
 
+  const handleCardClick = (book) => {
+    console.log(book);
+    setActiveModal('preview');
+    setSelectedBook(book);
+  };
+
+  const toPascalCase = (str) => {
+    return str
+      .toLowerCase()
+      .split(/[\s-_]+/)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   useEffect(() => {
     window.addEventListener('resize', (e) => {
       setScreenWidth(e.target.innerWidth);
@@ -51,10 +67,13 @@ export default function App() {
           shelf: `${shelf.display_name}`,
           rounded: false,
           cards: shelf.books.map((book) => {
+            //console.log(book)
             const bookData = {
-              title: book.title,
+              title: toPascalCase(book.title),
               subtitle: book.author,
               img: book.book_image,
+              des: book.description,
+              link: book.amazon_product_url
             };
             return bookData;
           }),
@@ -74,7 +93,7 @@ export default function App() {
             handleSignupClick={handleSignupClick}
           />
           <Sidebar handleLoggedOutClick={handleLoginClick} />
-          <Main shelvesData={shelves} />
+          <Main shelvesData={shelves} handleCardClick={handleCardClick} />
         </div>
         {activeModal === 'login' && (
           <LoginModal
@@ -92,6 +111,13 @@ export default function App() {
             handleSignup={handleSignup}
             handleLoginClick={handleLoginClick}
             isLoading={isLoading}
+          />
+        )}
+        {activeModal === 'preview' && (
+          <PreviewModal
+            handleCloseModal={handleCloseModal}
+            book={selectedBook}
+            isOpen={activeModal === 'preview'}
           />
         )}
       </screenWidthContext.Provider>
