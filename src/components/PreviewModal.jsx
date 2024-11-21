@@ -27,7 +27,7 @@ export default function ItemModal({ isOpen, book, handleCloseModal }) {
             )}
 
             <a
-              className={`text-blue-500 underline ${book.link ? '' : 'invisible'}`}
+              className="text-blue-500 underline"
               href={book.link}
               target="_blank"
               rel="noopener noreferrer"

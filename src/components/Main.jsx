@@ -5,10 +5,10 @@ import HomeView from './Views/HomeView';
 import ShowAllView from './Views/ShowAllView';
 import SearchResults from './Views/SearchResults';
 
-import { searchResultsContext } from '../contexts/contexts';
+import { SearchResultsContext } from '../contexts/contexts';
 
 export default function Main({ shelvesData, handleCardClick, width }) {
-  const { searchResults } = useContext(searchResultsContext);
+  const { searchResults } = useContext(SearchResultsContext);
   const position =
     width <= 979 ? 'col-start-1 col-span-5' : 'col-start-2 col-span-4';
 
@@ -23,9 +23,10 @@ export default function Main({ shelvesData, handleCardClick, width }) {
             <HomeView shelves={shelvesData} handleCardClick={handleCardClick} />
           }
         />
-        {shelvesData.map((data) => {
+        {shelvesData.map((data, id) => {
           return (
             <Route
+              key={id}
               path={`/${data.shelf}`}
               element={<ShowAllView data={data} />}
             />

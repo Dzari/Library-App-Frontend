@@ -1,67 +1,31 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { searchResultsContext } from '../contexts/contexts';
+import { SearchResultsContext } from '../contexts/contexts';
+import { getSearchResults } from '../utils/api';
+import { formatResults } from '../utils/formatResults';
 
 export default function Header({ handleLoginClick, handleSignupClick }) {
   const navigate = useNavigate();
-  const { setSearchResults } = useContext(searchResultsContext);
-  const [query, setQuery] = useState(''); // User input
+  const { setSearchResults } = useContext(SearchResultsContext);
+  const [query, setQuery] = useState('');
 
-  const setBooks = (books) => {
-    setSearchResults(books);
-  };
-
-  const getLargerImageUrl = (thumbnailUrl) => {
-    if (thumbnailUrl) {
-      return thumbnailUrl
-        .replace('&zoom=1', '&zoom=2')
-        .replace('http', 'https');
-    } else {
-      return 'https://via.placeholder.com/128x192.png?text=No+Image';
-    }
-  };
-
-  // Function to handle the API request
-  const fetchBooks = async () => {
-    if (!query.trim()) return; // Avoid empty searches
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     try {
-      const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
-          query
-        )}&maxResults=40`
-      );
-      const data = await response.json();
-
-      if (data.items) {
-        console.log(data.items);
-        const formattedBooks = data.items.map((book) => ({
-          img: getLargerImageUrl(book.volumeInfo.imageLinks?.thumbnail),
-          title: book.volumeInfo.title || 'No Title Available',
-          subtitle: book.volumeInfo.authors
-            ? book.volumeInfo.authors.join(', ')
-            : 'No Authors Available',
-          link: book.saleInfo.buyLink,
-        }));
-        setBooks(formattedBooks);
-        navigate('/searchResults');
-      } else {
-        setBooks([]);
-      }
+      const res = await getSearchResults(query);
+      const booksData = await formatResults(res);
+      setSearchResults(booksData);
+      navigate('/searchResults');
     } catch (error) {
       console.error('Error fetching books:', error);
     }
   };
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent page reload
-    fetchBooks();
-  };
-
   return (
-    <div className="header col-span-5 h-[5vh]">
+    <header className="header col-span-5 h-[5vh]">
       <div className="top-0 w-full">
         <div className="header__container flex justify-between py-1.5 text-[#B3B3B3]">
           <Link to="/">
@@ -89,6 +53,6 @@ export default function Header({ handleLoginClick, handleSignupClick }) {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

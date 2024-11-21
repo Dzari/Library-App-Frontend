@@ -1,8 +1,8 @@
 import React from 'react';
 
-const searchResultsContext = React.createContext({
+const SearchResultsContext = React.createContext({
   searchResults: [],
   handleSetBooks: () => {},
 });
 
-export { searchResultsContext };
+export { SearchResultsContext };

@@ -1,4 +1,4 @@
-import React, {  useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ItemCard from './ItemCard';
@@ -24,11 +24,12 @@ export default function Shelf({ data, handleCardClick }) {
         </Link>
       </div>
       <div ref={divWidth} className="flex justify-between overflow-hidden">
-        {data.cards.map((card) => {
+        {data.cards.map((card, id) => {
           counter++;
           if (counter <= width / 230) {
             return (
               <ItemCard
+                key={id}
                 card={card}
                 rounded={data.rounded}
                 onClick={handleCardClick}

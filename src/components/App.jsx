@@ -8,7 +8,7 @@ import SignupModal from './signupModal.jsx';
 import PreviewModal from './PreviewModal.jsx';
 import { getBook, getBestSellers } from '../utils/api.jsx';
 
-import { searchResultsContext } from '../contexts/contexts.js';
+import { SearchResultsContext } from '../contexts/contexts.js';
 
 export default function App() {
   const divRef = useRef(0);
@@ -42,7 +42,6 @@ export default function App() {
   };
 
   const handleCardClick = (book) => {
-    console.log(book);
     setActiveModal('preview');
     setSelectedBook(book);
   };
@@ -97,7 +96,7 @@ export default function App() {
 
   return (
     <div className="app h-[100vh] bg-black">
-      <searchResultsContext.Provider
+      <SearchResultsContext.Provider
         value={{ searchResults, setSearchResults }}
       >
         <div
@@ -140,7 +139,7 @@ export default function App() {
             isOpen={activeModal === 'preview'}
           />
         )}
-      </searchResultsContext.Provider>
+      </SearchResultsContext.Provider>
     </div>
   );
 }
