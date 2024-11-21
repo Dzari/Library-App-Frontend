@@ -7,7 +7,7 @@ export default function ModalWithForm({
 }) {
   return (
     <div
-      className={`modal invisible fixed inset-0 flex flex-col justify-center items-center ${
+      className={`modal invisible bg-black/50 fixed inset-0 flex flex-col justify-center items-center ${
         isOpen && '!visible'
       }`}
     >
