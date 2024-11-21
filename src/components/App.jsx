@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Header from './Header.jsx';
 import Main from './Main.jsx';
@@ -6,21 +6,20 @@ import Sidebar from './Sidebar.jsx';
 import LoginModal from './LoginModal.jsx';
 import SignupModal from './signupModal.jsx';
 import PreviewModal from './PreviewModal.jsx';
-import GoogleBooksSearch from './Views/ActiveBooklistView.jsx';
 import { getBook, getBestSellers } from '../utils/api.jsx';
 
-import {
-  screenWidthContext,
-  searchResultsContext,
-} from '../contexts/contexts.js';
+import { searchResultsContext } from '../contexts/contexts.js';
 
 export default function App() {
+  const divRef = useRef(0);
+
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [searchResults, setSearchResults] = useState([]);
   const [activeModal, setActiveModal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [selectedBook, setSelectedBook] = useState({});
   const [shelves, setShelves] = useState([]);
+  const [width, setWidth] = useState(0);
 
   const handleCloseModal = () => {
     setActiveModal('');
@@ -57,9 +56,17 @@ export default function App() {
   };
 
   useEffect(() => {
-    window.addEventListener('resize', (e) => {
-      setScreenWidth(e.target.innerWidth);
-    });
+    if (divRef.current) {
+      const resizeObserver = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+          if (entry.contentBoxSize) {
+            setWidth(entry.contentRect.width);
+          }
+        }
+      });
+      resizeObserver.observe(divRef.current);
+      return () => resizeObserver.disconnect();
+    }
   }, []);
 
   //getBook();
@@ -72,7 +79,6 @@ export default function App() {
           shelf: `${shelf.display_name}`,
           rounded: false,
           cards: shelf.books.map((book) => {
-            //console.log(book)
             const bookData = {
               title: toPascalCase(book.title),
               subtitle: book.author,
@@ -91,45 +97,50 @@ export default function App() {
 
   return (
     <div className="app h-[100vh] bg-black">
-      <screenWidthContext.Provider value={{ screenWidth }}>
-        <searchResultsContext.Provider
-          value={{ searchResults, setSearchResults }}
+      <searchResultsContext.Provider
+        value={{ searchResults, setSearchResults }}
+      >
+        <div
+          ref={divRef}
+          className="app__wrapper grid grid-cols-5 grid-row-auto gap-2.5 px-2 max-w-2k font-bold mx-auto overflow-hidden"
         >
-          <div className="app__wrapper grid grid-cols-5 grid-row-auto gap-2.5 px-2 max-w-2k font-bold mx-auto overflow-hidden">
-            <Header
-              handleLoginClick={handleLoginClick}
-              handleSignupClick={handleSignupClick}
-            />
-            <Sidebar handleLoggedOutClick={handleLoginClick} />
-            <Main shelvesData={shelves} handleCardClick={handleCardClick} />
-          </div>
-          {activeModal === 'login' && (
-            <LoginModal
-              handleCloseModal={handleCloseModal}
-              isOpen={activeModal === 'login'}
-              handleLogin={handleLogin}
-              handleSignupClick={handleSignupClick}
-              isLoading={isLoading}
-            />
-          )}
-          {activeModal === 'signup' && (
-            <SignupModal
-              handleCloseModal={handleCloseModal}
-              isOpen={activeModal === 'signup'}
-              handleSignup={handleSignup}
-              handleLoginClick={handleLoginClick}
-              isLoading={isLoading}
-            />
-          )}
-          {activeModal === 'preview' && (
-            <PreviewModal
-              handleCloseModal={handleCloseModal}
-              book={selectedBook}
-              isOpen={activeModal === 'preview'}
-            />
-          )}
-        </searchResultsContext.Provider>
-      </screenWidthContext.Provider>
+          <Header
+            handleLoginClick={handleLoginClick}
+            handleSignupClick={handleSignupClick}
+          />
+          {width >= 980 && <Sidebar handleLoggedOutClick={handleLoginClick} />}
+          <Main
+            shelvesData={shelves}
+            handleCardClick={handleCardClick}
+            width={width}
+          />
+        </div>
+        {activeModal === 'login' && (
+          <LoginModal
+            handleCloseModal={handleCloseModal}
+            isOpen={activeModal === 'login'}
+            handleLogin={handleLogin}
+            handleSignupClick={handleSignupClick}
+            isLoading={isLoading}
+          />
+        )}
+        {activeModal === 'signup' && (
+          <SignupModal
+            handleCloseModal={handleCloseModal}
+            isOpen={activeModal === 'signup'}
+            handleSignup={handleSignup}
+            handleLoginClick={handleLoginClick}
+            isLoading={isLoading}
+          />
+        )}
+        {activeModal === 'preview' && (
+          <PreviewModal
+            handleCloseModal={handleCloseModal}
+            book={selectedBook}
+            isOpen={activeModal === 'preview'}
+          />
+        )}
+      </searchResultsContext.Provider>
     </div>
   );
 }

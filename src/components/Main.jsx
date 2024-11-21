@@ -5,13 +5,12 @@ import HomeView from './Views/HomeView';
 import ShowAllView from './Views/ShowAllView';
 import SearchResults from './Views/SearchResults';
 
-import { screenWidthContext, searchResultsContext } from '../contexts/contexts';
+import { searchResultsContext } from '../contexts/contexts';
 
-export default function Main({ shelvesData, handleCardClick }) {
-  const { screenWidth } = useContext(screenWidthContext);
+export default function Main({ shelvesData, handleCardClick, width }) {
   const { searchResults } = useContext(searchResultsContext);
   const position =
-    screenWidth > 980 ? 'col-start-2 col-span-4' : 'col-start-1 col-span-5';
+    width <= 979 ? 'col-start-1 col-span-5' : 'col-start-2 col-span-4';
 
   return (
     <div
@@ -34,7 +33,12 @@ export default function Main({ shelvesData, handleCardClick }) {
         })}
         <Route
           path="/searchResults"
-          element={<SearchResults books={searchResults} handleCardClick={handleCardClick}/>}
+          element={
+            <SearchResults
+              books={searchResults}
+              handleCardClick={handleCardClick}
+            />
+          }
         />
       </Routes>
     </div>
