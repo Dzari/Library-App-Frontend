@@ -72,26 +72,30 @@ export default function App() {
   //getBestSellers();
 
   useEffect(() => {
-    getBestSellers().then((data) => {
-      const shelvesData = data.results.lists.map((shelf) => {
-        let modifiedShelf = {
-          shelf: `${shelf.display_name}`,
-          rounded: false,
-          cards: shelf.books.map((book) => {
-            const bookData = {
-              title: toPascalCase(book.title),
-              subtitle: book.author,
-              img: book.book_image,
-              des: book.description,
-              link: book.amazon_product_url,
-            };
-            return bookData;
-          }),
-        };
-        return modifiedShelf;
+    getBestSellers()
+      .then((data) => {
+        const shelvesData = data.results.lists.map((shelf) => {
+          let modifiedShelf = {
+            shelf: `${shelf.display_name}`,
+            rounded: false,
+            cards: shelf.books.map((book) => {
+              const bookData = {
+                title: toPascalCase(book.title),
+                subtitle: book.author,
+                img: book.book_image,
+                des: book.description,
+                link: book.amazon_product_url,
+              };
+              return bookData;
+            }),
+          };
+          return modifiedShelf;
+        });
+        setShelves(shelvesData);
+      })
+      .catch((e) => {
+        console.log(e);
       });
-      setShelves(shelvesData);
-    });
   }, []);
 
   return (
