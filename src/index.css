@@ -1,2 +1,26 @@
 @import url(./vendor/normilize.css);
 @import url(./vendor/fonts.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #535353;
+    border-radius: 5px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #B3B3B3;
+}
