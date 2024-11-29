@@ -18,7 +18,7 @@ export default function Main({ shelvesData, handleCardClick, width }) {
     >
       <Routes>
         <Route
-          path="/"
+          path="/library-app-frontend"
           element={
             <HomeView shelves={shelvesData} handleCardClick={handleCardClick} />
           }
@@ -33,7 +33,7 @@ export default function Main({ shelvesData, handleCardClick, width }) {
           );
         })}
         <Route
-          path="/searchResults"
+          path="/library-app-frontend/searchResults"
           element={
             <SearchResults
               books={searchResults}
