@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/library-app-frontend/static/css/main.2b6b9e3f.css",
-    "main.js": "/library-app-frontend/static/js/main.e0882bc3.js",
+    "main.js": "/library-app-frontend/static/js/main.716349b2.js",
     "static/media/CabinetGrotesk-Medium.ttf": "/library-app-frontend/static/media/CabinetGrotesk-Medium.06e4535179580983658a.ttf",
     "static/media/CabinetGrotesk-Bold.ttf": "/library-app-frontend/static/media/CabinetGrotesk-Bold.049721aa3e601711db60.ttf",
     "static/media/CabinetGrotesk-Bold.woff": "/library-app-frontend/static/media/CabinetGrotesk-Bold.0fb1cbec860aa3537c32.woff",
@@ -15,10 +15,10 @@
     "static/media/home-icon.svg": "/library-app-frontend/static/media/home-icon.5e2887d5786c47293495.svg",
     "static/media/hover-home-icon.svg": "/library-app-frontend/static/media/hover-home-icon.c5f7bdd562b0210f02ac.svg",
     "main.2b6b9e3f.css.map": "/library-app-frontend/static/css/main.2b6b9e3f.css.map",
-    "main.e0882bc3.js.map": "/library-app-frontend/static/js/main.e0882bc3.js.map"
+    "main.716349b2.js.map": "/library-app-frontend/static/js/main.716349b2.js.map"
   },
   "entrypoints": [
     "static/css/main.2b6b9e3f.css",
-    "static/js/main.e0882bc3.js"
+    "static/js/main.716349b2.js"
   ]
 }
