@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import HomeView from './Views/HomeView';
 import ShowAllView from './Views/ShowAllView';
@@ -41,6 +41,7 @@ export default function Main({ shelvesData, handleCardClick, width }) {
             />
           }
         />
+        <Route path="*" element={<Navigate to="/library-app-frontend" replace />} />
       </Routes>
     </div>
   );
